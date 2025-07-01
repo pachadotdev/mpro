@@ -19,14 +19,14 @@ print_header "MPro Package Complete Installer and Tester"
 
 # --- BEGIN: Self-cloning logic for one-liner install ---
 REPO_URL="https://github.com/pachadotdev/mpro"
-SCRIPT_PATH="mpro-luatex/install.sh"
+SCRIPT_PATH="install.sh"
 
 # Check if we have the required files
 if [[ ! -f "tex/latex/mpro/mpro.sty" ]]; then
     print_info "Required files not found. Cloning repository..."
     TMPDIR=$(mktemp -d /tmp/mpro-luatex-XXXXXX)
     git clone --depth 1 "$REPO_URL" "$TMPDIR"
-    cd "$TMPDIR/mpro-luatex"
+    cd "$TMPDIR/"
     bash install.sh "$@"
     status=$?
     cd - &>/dev/null

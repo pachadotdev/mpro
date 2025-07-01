@@ -12,6 +12,8 @@ The focus is to display mathematical typesetting, therefore the name "mpro"
 
 This package is shared under the OFL (Open Font License) and is free to use.
 
+Demo: https://github.com/pachadotdev/mpro/blob/main/doc/latex/mpro/mpro-example.pdf
+
 ## Installation
 
 Copy and paste this one-line command:
