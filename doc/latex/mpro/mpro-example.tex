@@ -1,0 +1,40 @@
+% Example document for MPro package
+\documentclass{article}
+\usepackage{mpro}
+% \usepackage[oldstyle]{mpro}  % for old style numbers
+% \usepackage[lining]{mpro}    % for lining numbers
+
+\title{MPro Font Package Example}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Text Examples}
+
+Hello, this is MPro! 0123456789
+
+\textit{Italic text}, \textbf{Bold text}, and \textbf{\textit{Bold Italic}}.
+
+\section{Math Examples}
+
+Inline math: $a > 0, a \in \mathbb{R}$
+
+Display math:
+\begin{align}
+f(x) &= x^2 \\
+g(x) = f'(x) &= 2x \\
+\int_0^{\infty} e^{-x} dx &= 1
+\end{align}
+
+More complex math:
+$$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$$
+
+Greek letters: $\alpha, \beta, \gamma, \Delta, \Gamma, \pi$
+
+Calligraphic: $\mathcal{C}, \mathcal{H}$
+
+Blackboard bold: $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$
+
+\end{document}

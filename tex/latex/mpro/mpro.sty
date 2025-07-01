@@ -1,0 +1,34 @@
+% MPro package for LuaLaTeX/XeLaTeX (OTF only, with math support)
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mpro}[2025/06/30 v1.0 MPro font package for LuaTeX/XeTeX with math]
+
+\RequirePackage{ifluatex}
+\RequirePackage{ifxetex}
+
+% Check that we're using a Unicode engine
+\ifluatex\else\ifxetex\else
+  \PackageError{mpro}{This package requires XeLaTeX or LuaLaTeX}{%
+    Please compile with xelatex or lualatex instead of pdflatex.}
+\fi\fi
+
+\RequirePackage{fontspec}
+\RequirePackage{unicode-math}
+
+% Set up main text fonts
+\setmainfont{MPro-Regular.otf}[
+  ItalicFont = MPro-It.otf,
+  BoldFont = MPro-Bold.otf,
+  Ligatures = TeX,
+]
+
+% FIRST: Set a main math font (required by unicode-math)
+\setmathfont{Latin Modern Math}
+
+% THEN: Override specific ranges with MPro fonts
+\setmathfont{MPro-Regular.otf}[range = {up/{latin,Latin,greek,Greek}}]
+\setmathfont{MPro-It.otf}[range = {it/{latin,Latin,greek,Greek}}]
+\setmathfont{MPro-Bold.otf}[range = {bfup/{latin,Latin,greek,Greek}}]
+\setmathfont{MPro-Blackboard.otf}[range = {bb}]
+\setmathfont{MPro-Calligraphic.otf}[range = {cal}]
+
+\endinput
